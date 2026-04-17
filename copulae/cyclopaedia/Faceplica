@@ -1,0 +1,16 @@
+# Faceplica — cyclopaedia (ontologia Cyc-similis)
+
+OBJECTA = cyclopaedia.o asserta.o interroga.o proprietates.o taxonomia.o
+
+omnia: cyclopaedia
+
+cyclopaedia: $(OBJECTA)
+	ldi $^
+
+%.o: %.c cyclopaedia.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) cyclopaedia
+
+.PHONY: omnia purga

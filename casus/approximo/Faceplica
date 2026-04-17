@@ -1,0 +1,14 @@
+# Faceplica — approximo
+
+omnia: approximo
+
+approximo: approximo.o
+	ldi approximo.o
+
+approximo.o: approximo.c
+	ccc approximo.c
+
+purga:
+	rm -f approximo approximo.o
+
+.PHONY: omnia purga

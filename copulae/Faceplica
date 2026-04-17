@@ -1,0 +1,23 @@
+# Faceplica
+
+omnia:
+	face -C concilium
+	face -C cyclopaedia
+	face -C eliza
+	face -C grammaticus
+	face -C peritus
+	face -C rationator
+	face -C scholasticus
+	face -C vates
+
+purga:
+	face -C concilium purga
+	face -C cyclopaedia purga
+	face -C eliza purga
+	face -C grammaticus purga
+	face -C peritus purga
+	face -C rationator purga
+	face -C scholasticus purga
+	face -C vates purga
+
+.PHONY: omnia purga

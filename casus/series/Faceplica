@@ -1,0 +1,14 @@
+# Faceplica — series
+
+omnia: series
+
+series: series.o
+	ldi series.o
+
+series.o: series.c
+	ccc series.c
+
+purga:
+	rm -f series series.o
+
+.PHONY: omnia purga

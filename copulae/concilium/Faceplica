@@ -1,0 +1,16 @@
+# Faceplica — concilium (dialogus quattuor scholarum)
+
+OBJECTA = concilium.o stoici.o epicurei.o peripatetici.o sceptici.o quaestor.o
+
+omnia: concilium
+
+concilium: $(OBJECTA)
+	ldi $^
+
+%.o: %.c concilium.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) concilium
+
+.PHONY: omnia purga

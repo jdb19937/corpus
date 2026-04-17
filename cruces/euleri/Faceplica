@@ -1,0 +1,14 @@
+# Faceplica — euleri
+
+omnia: euleri
+
+euleri: euleri.o
+	ldi euleri.o
+
+euleri.o: euleri.c
+	ccc euleri.c
+
+purga:
+	rm -f euleri euleri.o
+
+.PHONY: omnia purga

@@ -1,0 +1,14 @@
+# Faceplica — metrum
+
+omnia: metrum
+
+metrum: metrum.o
+	ldi metrum.o
+
+metrum.o: metrum.c
+	ccc metrum.c
+
+purga:
+	rm -f metrum metrum.o
+
+.PHONY: omnia purga

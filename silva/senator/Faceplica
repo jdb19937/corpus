@@ -1,0 +1,14 @@
+# Faceplica — senator
+
+omnia: senator
+
+senator: senator.o
+	ldi senator.o
+
+senator.o: senator.c
+	ccc senator.c
+
+purga:
+	rm -f senator senator.o
+
+.PHONY: omnia purga

@@ -1,0 +1,14 @@
+# Faceplica — fistula
+
+omnia: fistula
+
+fistula: fistula.o
+	ldi fistula.o
+
+fistula.o: fistula.c
+	ccc fistula.c
+
+purga:
+	rm -f fistula fistula.o
+
+.PHONY: omnia purga

@@ -1,0 +1,14 @@
+# Faceplica — explorator
+
+omnia: explorator
+
+explorator: explorator.o
+	ldi explorator.o
+
+explorator.o: explorator.c
+	ccc explorator.c
+
+purga:
+	rm -f explorator explorator.o
+
+.PHONY: omnia purga

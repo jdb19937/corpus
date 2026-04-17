@@ -1,0 +1,14 @@
+# Faceplica — gemini
+
+omnia: gemini
+
+gemini: gemini.o
+	ldi gemini.o
+
+gemini.o: gemini.c
+	ccc gemini.c
+
+purga:
+	rm -f gemini gemini.o
+
+.PHONY: omnia purga

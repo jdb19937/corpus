@@ -1,0 +1,14 @@
+# Faceplica — circulus
+
+omnia: circulus
+
+circulus: circulus.o
+	ldi circulus.o
+
+circulus.o: circulus.c
+	ccc circulus.c
+
+purga:
+	rm -f circulus circulus.o
+
+.PHONY: omnia purga

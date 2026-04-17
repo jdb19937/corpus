@@ -1,0 +1,14 @@
+# Faceplica — tubulus
+
+omnia: tubulus
+
+tubulus: tubulus.o
+	ldi tubulus.o
+
+tubulus.o: tubulus.c
+	ccc tubulus.c
+
+purga:
+	rm -f tubulus tubulus.o
+
+.PHONY: omnia purga

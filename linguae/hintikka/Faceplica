@@ -1,0 +1,14 @@
+# Faceplica — hintikka
+
+omnia: hintikka
+
+hintikka: hintikka.o
+	ldi hintikka.o
+
+hintikka.o: hintikka.c
+	ccc hintikka.c
+
+purga:
+	rm -f hintikka hintikka.o
+
+.PHONY: omnia purga

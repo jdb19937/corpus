@@ -1,0 +1,14 @@
+# Faceplica — agnitio
+
+omnia: agnitio
+
+agnitio: agnitio.o
+	ldi agnitio.o
+
+agnitio.o: agnitio.c
+	ccc agnitio.c
+
+purga:
+	rm -f agnitio agnitio.o
+
+.PHONY: omnia purga

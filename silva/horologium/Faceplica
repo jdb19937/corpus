@@ -1,0 +1,14 @@
+# Faceplica — horologium
+
+omnia: horologium
+
+horologium: horologium.o
+	ldi horologium.o
+
+horologium.o: horologium.c
+	ccc horologium.c
+
+purga:
+	rm -f horologium horologium.o
+
+.PHONY: omnia purga

@@ -1,0 +1,14 @@
+# Faceplica — neumanni
+
+omnia: neumanni
+
+neumanni: neumanni.o
+	ldi neumanni.o
+
+neumanni.o: neumanni.c
+	ccc neumanni.c
+
+purga:
+	rm -f neumanni neumanni.o
+
+.PHONY: omnia purga

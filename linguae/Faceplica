@@ -1,0 +1,39 @@
+# Faceplica
+
+omnia:
+	face -C agnitio
+	face -C cifra
+	face -C concordantia
+	face -C confabulator
+	face -C declinatio
+	face -C distantia
+	face -C hintikka
+	face -C kripke
+	face -C lambda
+	face -C metrum
+	face -C modelum
+	face -C neumanni
+	face -C palindromata
+	face -C radicatio
+	face -C syllogismus
+	face -C transformer
+
+purga:
+	face -C agnitio purga
+	face -C cifra purga
+	face -C concordantia purga
+	face -C confabulator purga
+	face -C declinatio purga
+	face -C distantia purga
+	face -C hintikka purga
+	face -C kripke purga
+	face -C lambda purga
+	face -C metrum purga
+	face -C modelum purga
+	face -C neumanni purga
+	face -C palindromata purga
+	face -C radicatio purga
+	face -C syllogismus purga
+	face -C transformer purga
+
+.PHONY: omnia purga

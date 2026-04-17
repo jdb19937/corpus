@@ -1,0 +1,14 @@
+# Faceplica — simplicium
+
+omnia: simplicium
+
+simplicium: simplicium.o
+	ldi simplicium.o
+
+simplicium.o: simplicium.c
+	ccc simplicium.c
+
+purga:
+	rm -f simplicium simplicium.o
+
+.PHONY: omnia purga

@@ -1,0 +1,14 @@
+# Faceplica — cifra
+
+omnia: cifra
+
+cifra: cifra.o
+	ldi cifra.o
+
+cifra.o: cifra.c
+	ccc cifra.c
+
+purga:
+	rm -f cifra cifra.o
+
+.PHONY: omnia purga

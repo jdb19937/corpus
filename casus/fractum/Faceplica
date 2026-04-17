@@ -1,0 +1,14 @@
+# Faceplica — fractum
+
+omnia: fractum
+
+fractum: fractum.o
+	ldi fractum.o
+
+fractum.o: fractum.c
+	ccc fractum.c
+
+purga:
+	rm -f fractum fractum.o
+
+.PHONY: omnia purga

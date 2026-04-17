@@ -1,0 +1,14 @@
+# Faceplica — palindromata
+
+omnia: palindromata
+
+palindromata: palindromata.o
+	ldi palindromata.o
+
+palindromata.o: palindromata.c
+	ccc palindromata.c
+
+purga:
+	rm -f palindromata palindromata.o
+
+.PHONY: omnia purga

@@ -1,0 +1,55 @@
+# Faceplica
+
+omnia:
+	face -C approximo
+	face -C circulus
+	face -C constans
+	face -C cribrum
+	face -C dicta
+	face -C fatum
+	face -C felices
+	face -C formica
+	face -C fractum
+	face -C genera
+	face -C gradus
+	face -C interpres
+	face -C numeri
+	face -C piramis
+	face -C planum
+	face -C probatio
+	face -C puncta
+	face -C quadratum
+	face -C recursio
+	face -C regula
+	face -C series
+	face -C triangulum
+	face -C turres
+	face -C vita
+
+purga:
+	face -C approximo purga
+	face -C circulus purga
+	face -C constans purga
+	face -C cribrum purga
+	face -C dicta purga
+	face -C fatum purga
+	face -C felices purga
+	face -C formica purga
+	face -C fractum purga
+	face -C genera purga
+	face -C gradus purga
+	face -C interpres purga
+	face -C numeri purga
+	face -C piramis purga
+	face -C planum purga
+	face -C probatio purga
+	face -C puncta purga
+	face -C quadratum purga
+	face -C recursio purga
+	face -C regula purga
+	face -C series purga
+	face -C triangulum purga
+	face -C turres purga
+	face -C vita purga
+
+.PHONY: omnia purga

@@ -1,0 +1,14 @@
+# Faceplica — transformer
+
+omnia: transformer
+
+transformer: transformer.o
+	ldi transformer.o
+
+transformer.o: transformer.c
+	ccc transformer.c
+
+purga:
+	rm -f transformer transformer.o
+
+.PHONY: omnia purga

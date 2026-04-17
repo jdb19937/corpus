@@ -1,0 +1,14 @@
+# Faceplica — genera
+
+omnia: genera
+
+genera: genera.o
+	ldi genera.o
+
+genera.o: genera.c
+	ccc genera.c
+
+purga:
+	rm -f genera genera.o
+
+.PHONY: omnia purga

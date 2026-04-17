@@ -1,0 +1,14 @@
+# Faceplica — primi
+
+omnia: primi
+
+primi: primi.o
+	ldi primi.o
+
+primi.o: primi.c
+	ccc primi.c
+
+purga:
+	rm -f primi primi.o
+
+.PHONY: omnia purga

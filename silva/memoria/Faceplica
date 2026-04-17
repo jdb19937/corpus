@@ -1,0 +1,14 @@
+# Faceplica — memoria
+
+omnia: memoria
+
+memoria: memoria.o
+	ldi memoria.o
+
+memoria.o: memoria.c
+	ccc memoria.c
+
+purga:
+	rm -f memoria memoria.o
+
+.PHONY: omnia purga

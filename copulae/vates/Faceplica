@@ -1,0 +1,16 @@
+# Faceplica — vates (generator carminum)
+
+OBJECTA = vates.o grammatica.o lexicon.o sortio.o
+
+omnia: vates
+
+vates: $(OBJECTA)
+	ldi $^
+
+%.o: %.c vates.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) vates
+
+.PHONY: omnia purga

@@ -1,0 +1,14 @@
+# Faceplica — syllogismus
+
+omnia: syllogismus
+
+syllogismus: syllogismus.o
+	ldi syllogismus.o
+
+syllogismus.o: syllogismus.c
+	ccc syllogismus.c
+
+purga:
+	rm -f syllogismus syllogismus.o
+
+.PHONY: omnia purga

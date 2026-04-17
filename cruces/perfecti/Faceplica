@@ -1,0 +1,14 @@
+# Faceplica — perfecti
+
+omnia: perfecti
+
+perfecti: perfecti.o
+	ldi perfecti.o
+
+perfecti.o: perfecti.c
+	ccc perfecti.c
+
+purga:
+	rm -f perfecti perfecti.o
+
+.PHONY: omnia purga

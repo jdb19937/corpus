@@ -1,0 +1,14 @@
+# Faceplica — nuntius
+
+omnia: nuntius
+
+nuntius: nuntius.o
+	ldi nuntius.o
+
+nuntius.o: nuntius.c
+	ccc nuntius.c
+
+purga:
+	rm -f nuntius nuntius.o
+
+.PHONY: omnia purga

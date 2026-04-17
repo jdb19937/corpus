@@ -1,0 +1,14 @@
+# Faceplica — triangulum
+
+omnia: triangulum
+
+triangulum: triangulum.o
+	ldi triangulum.o
+
+triangulum.o: triangulum.c
+	ccc triangulum.c
+
+purga:
+	rm -f triangulum triangulum.o
+
+.PHONY: omnia purga

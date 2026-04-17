@@ -1,0 +1,14 @@
+# Faceplica — ambulator
+
+omnia: ambulator
+
+ambulator: ambulator.o
+	ldi ambulator.o
+
+ambulator.o: ambulator.c
+	ccc ambulator.c
+
+purga:
+	rm -f ambulator ambulator.o
+
+.PHONY: omnia purga

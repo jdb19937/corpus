@@ -1,0 +1,14 @@
+# Faceplica — recursio
+
+omnia: recursio
+
+recursio: recursio.o
+	ldi recursio.o
+
+recursio.o: recursio.c
+	ccc recursio.c
+
+purga:
+	rm -f recursio recursio.o
+
+.PHONY: omnia purga

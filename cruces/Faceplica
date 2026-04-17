@@ -1,0 +1,39 @@
+# Faceplica
+
+omnia:
+	face -C coniectura
+	face -C connexio
+	face -C continuae
+	face -C divisores
+	face -C euleri
+	face -C goldbachiana
+	face -C matrices
+	face -C mersenniani
+	face -C moebiana
+	face -C perfecti
+	face -C polyhedra
+	face -C primi
+	face -C residua
+	face -C simplicium
+	face -C superficies
+	face -C totiens
+
+purga:
+	face -C coniectura purga
+	face -C connexio purga
+	face -C continuae purga
+	face -C divisores purga
+	face -C euleri purga
+	face -C goldbachiana purga
+	face -C matrices purga
+	face -C mersenniani purga
+	face -C moebiana purga
+	face -C perfecti purga
+	face -C polyhedra purga
+	face -C primi purga
+	face -C residua purga
+	face -C simplicium purga
+	face -C superficies purga
+	face -C totiens purga
+
+.PHONY: omnia purga

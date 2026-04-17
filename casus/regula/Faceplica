@@ -1,0 +1,14 @@
+# Faceplica — regula
+
+omnia: regula
+
+regula: regula.o
+	ldi regula.o
+
+regula.o: regula.c
+	ccc regula.c
+
+purga:
+	rm -f regula regula.o
+
+.PHONY: omnia purga

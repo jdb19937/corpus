@@ -1,0 +1,14 @@
+# Faceplica — piramis
+
+omnia: piramis
+
+piramis: piramis.o
+	ldi piramis.o
+
+piramis.o: piramis.c
+	ccc piramis.c
+
+purga:
+	rm -f piramis piramis.o
+
+.PHONY: omnia purga

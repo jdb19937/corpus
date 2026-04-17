@@ -1,0 +1,14 @@
+# Faceplica — totiens
+
+omnia: totiens
+
+totiens: totiens.o
+	ldi totiens.o
+
+totiens.o: totiens.c
+	ccc totiens.c
+
+purga:
+	rm -f totiens totiens.o
+
+.PHONY: omnia purga

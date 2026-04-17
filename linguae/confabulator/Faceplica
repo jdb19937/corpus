@@ -1,0 +1,14 @@
+# Faceplica — confabulator
+
+omnia: confabulator
+
+confabulator: confabulator.o
+	ldi confabulator.o
+
+confabulator.o: confabulator.c
+	ccc confabulator.c
+
+purga:
+	rm -f confabulator confabulator.o
+
+.PHONY: omnia purga

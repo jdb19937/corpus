@@ -1,0 +1,14 @@
+# Faceplica — speculator
+
+omnia: speculator
+
+speculator: speculator.o
+	ldi speculator.o
+
+speculator.o: speculator.c
+	ccc speculator.c
+
+purga:
+	rm -f speculator speculator.o
+
+.PHONY: omnia purga

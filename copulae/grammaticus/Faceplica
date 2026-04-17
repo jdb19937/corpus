@@ -1,0 +1,16 @@
+# Faceplica — grammaticus (analyzator morphologicus Latinus)
+
+OBJECTA = grammaticus.o agnosco.o coniugatio_tab.o declinatio_tab.o pronomina.o
+
+omnia: grammaticus
+
+grammaticus: $(OBJECTA)
+	ldi $^
+
+%.o: %.c grammaticus.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) grammaticus
+
+.PHONY: omnia purga

@@ -1,0 +1,14 @@
+# Faceplica — nexus
+
+omnia: nexus
+
+nexus: nexus.o
+	ldi nexus.o
+
+nexus.o: nexus.c
+	ccc nexus.c
+
+purga:
+	rm -f nexus nexus.o
+
+.PHONY: omnia purga

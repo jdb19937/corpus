@@ -1,0 +1,14 @@
+# Faceplica — cursor
+
+omnia: cursor
+
+cursor: cursor.o
+	ldi cursor.o
+
+cursor.o: cursor.c
+	ccc cursor.c
+
+purga:
+	rm -f cursor cursor.o
+
+.PHONY: omnia purga

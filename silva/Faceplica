@@ -1,0 +1,39 @@
+# Faceplica
+
+omnia:
+	face -C ambulator
+	face -C catena
+	face -C cursor
+	face -C custos
+	face -C explorator
+	face -C fistula
+	face -C gemini
+	face -C horologium
+	face -C memoria
+	face -C nexus
+	face -C nuntius
+	face -C scriba
+	face -C senator
+	face -C speculator
+	face -C tubulus
+	face -C vigil
+
+purga:
+	face -C ambulator purga
+	face -C catena purga
+	face -C cursor purga
+	face -C custos purga
+	face -C explorator purga
+	face -C fistula purga
+	face -C gemini purga
+	face -C horologium purga
+	face -C memoria purga
+	face -C nexus purga
+	face -C nuntius purga
+	face -C scriba purga
+	face -C senator purga
+	face -C speculator purga
+	face -C tubulus purga
+	face -C vigil purga
+
+.PHONY: omnia purga

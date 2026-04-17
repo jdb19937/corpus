@@ -1,0 +1,14 @@
+# Faceplica — distantia
+
+omnia: distantia
+
+distantia: distantia.o
+	ldi distantia.o
+
+distantia.o: distantia.c
+	ccc distantia.c
+
+purga:
+	rm -f distantia distantia.o
+
+.PHONY: omnia purga

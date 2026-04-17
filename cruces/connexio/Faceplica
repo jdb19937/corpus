@@ -1,0 +1,14 @@
+# Faceplica — connexio
+
+omnia: connexio
+
+connexio: connexio.o
+	ldi connexio.o
+
+connexio.o: connexio.c
+	ccc connexio.c
+
+purga:
+	rm -f connexio connexio.o
+
+.PHONY: omnia purga

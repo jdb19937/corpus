@@ -1,0 +1,14 @@
+# Faceplica — polyhedra
+
+omnia: polyhedra
+
+polyhedra: polyhedra.o
+	ldi polyhedra.o
+
+polyhedra.o: polyhedra.c
+	ccc polyhedra.c
+
+purga:
+	rm -f polyhedra polyhedra.o
+
+.PHONY: omnia purga

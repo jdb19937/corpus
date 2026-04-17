@@ -1,0 +1,14 @@
+# Faceplica — continuae
+
+omnia: continuae
+
+continuae: continuae.o
+	ldi continuae.o
+
+continuae.o: continuae.c
+	ccc continuae.c
+
+purga:
+	rm -f continuae continuae.o
+
+.PHONY: omnia purga

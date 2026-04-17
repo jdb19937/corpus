@@ -1,0 +1,14 @@
+# Faceplica — goldbachiana
+
+omnia: goldbachiana
+
+goldbachiana: goldbachiana.o
+	ldi goldbachiana.o
+
+goldbachiana.o: goldbachiana.c
+	ccc goldbachiana.c
+
+purga:
+	rm -f goldbachiana goldbachiana.o
+
+.PHONY: omnia purga

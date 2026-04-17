@@ -1,0 +1,16 @@
+# Faceplica — peritus (systema peritum humoralis)
+
+OBJECTA = peritus.o explicatio.o facta.o motor.o regulae.o
+
+omnia: peritus
+
+peritus: $(OBJECTA)
+	ldi $^
+
+%.o: %.c peritus.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) peritus
+
+.PHONY: omnia purga

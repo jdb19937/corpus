@@ -1,0 +1,14 @@
+# Faceplica — residua
+
+omnia: residua
+
+residua: residua.o
+	ldi residua.o
+
+residua.o: residua.c
+	ccc residua.c
+
+purga:
+	rm -f residua residua.o
+
+.PHONY: omnia purga

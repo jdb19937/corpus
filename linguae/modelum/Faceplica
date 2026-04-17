@@ -1,0 +1,14 @@
+# Faceplica — modelum
+
+omnia: modelum
+
+modelum: modelum.o
+	ldi modelum.o
+
+modelum.o: modelum.c
+	ccc modelum.c
+
+purga:
+	rm -f modelum modelum.o
+
+.PHONY: omnia purga

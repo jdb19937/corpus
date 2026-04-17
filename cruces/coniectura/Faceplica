@@ -1,0 +1,14 @@
+# Faceplica — coniectura
+
+omnia: coniectura
+
+coniectura: coniectura.o
+	ldi coniectura.o
+
+coniectura.o: coniectura.c
+	ccc coniectura.c
+
+purga:
+	rm -f coniectura coniectura.o
+
+.PHONY: omnia purga

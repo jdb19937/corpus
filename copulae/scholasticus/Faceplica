@@ -1,0 +1,16 @@
+# Faceplica — scholasticus (disputatio in stilu Summae Theologicae)
+
+OBJECTA = scholasticus.o auctoritates.o compositor.o obiectio.o responsio.o sedcontra.o
+
+omnia: scholasticus
+
+scholasticus: $(OBJECTA)
+	ldi $^
+
+%.o: %.c scholasticus.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) scholasticus
+
+.PHONY: omnia purga

@@ -1,0 +1,14 @@
+# Faceplica — mersenniani
+
+omnia: mersenniani
+
+mersenniani: mersenniani.o
+	ldi mersenniani.o
+
+mersenniani.o: mersenniani.c
+	ccc mersenniani.c
+
+purga:
+	rm -f mersenniani mersenniani.o
+
+.PHONY: omnia purga

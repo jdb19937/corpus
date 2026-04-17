@@ -1,0 +1,14 @@
+# Faceplica — lambda
+
+omnia: lambda
+
+lambda: lambda.o
+	ldi lambda.o
+
+lambda.o: lambda.c
+	ccc lambda.c
+
+purga:
+	rm -f lambda lambda.o
+
+.PHONY: omnia purga

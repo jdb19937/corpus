@@ -1,0 +1,14 @@
+# Faceplica — matrices
+
+omnia: matrices
+
+matrices: matrices.o
+	ldi matrices.o
+
+matrices.o: matrices.c
+	ccc matrices.c
+
+purga:
+	rm -f matrices matrices.o
+
+.PHONY: omnia purga

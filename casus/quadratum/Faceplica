@@ -1,0 +1,14 @@
+# Faceplica — quadratum
+
+omnia: quadratum
+
+quadratum: quadratum.o
+	ldi quadratum.o
+
+quadratum.o: quadratum.c
+	ccc quadratum.c
+
+purga:
+	rm -f quadratum quadratum.o
+
+.PHONY: omnia purga

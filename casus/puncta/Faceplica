@@ -1,0 +1,14 @@
+# Faceplica — puncta
+
+omnia: puncta
+
+puncta: puncta.o
+	ldi puncta.o
+
+puncta.o: puncta.c
+	ccc puncta.c
+
+purga:
+	rm -f puncta puncta.o
+
+.PHONY: omnia purga

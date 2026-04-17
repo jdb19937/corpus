@@ -1,0 +1,14 @@
+# Faceplica — fatum
+
+omnia: fatum
+
+fatum: fatum.o
+	ldi fatum.o
+
+fatum.o: fatum.c
+	ccc fatum.c
+
+purga:
+	rm -f fatum fatum.o
+
+.PHONY: omnia purga

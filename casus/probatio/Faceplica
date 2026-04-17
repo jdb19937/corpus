@@ -1,0 +1,14 @@
+# Faceplica — probatio
+
+omnia: probatio
+
+probatio: probatio.o
+	ldi probatio.o
+
+probatio.o: probatio.c
+	ccc probatio.c
+
+purga:
+	rm -f probatio probatio.o
+
+.PHONY: omnia purga

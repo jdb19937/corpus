@@ -1,0 +1,14 @@
+# Faceplica — interpres
+
+omnia: interpres
+
+interpres: interpres.o
+	ldi interpres.o
+
+interpres.o: interpres.c
+	ccc interpres.c
+
+purga:
+	rm -f interpres interpres.o
+
+.PHONY: omnia purga

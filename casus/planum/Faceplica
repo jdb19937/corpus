@@ -1,0 +1,14 @@
+# Faceplica — planum
+
+omnia: planum
+
+planum: planum.o
+	ldi planum.o
+
+planum.o: planum.c
+	ccc planum.c
+
+purga:
+	rm -f planum planum.o
+
+.PHONY: omnia purga

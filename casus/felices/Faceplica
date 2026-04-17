@@ -1,0 +1,14 @@
+# Faceplica — felices
+
+omnia: felices
+
+felices: felices.o
+	ldi felices.o
+
+felices.o: felices.c
+	ccc felices.c
+
+purga:
+	rm -f felices felices.o
+
+.PHONY: omnia purga

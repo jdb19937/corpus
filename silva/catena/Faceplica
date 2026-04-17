@@ -1,0 +1,14 @@
+# Faceplica — catena
+
+omnia: catena
+
+catena: catena.o
+	ldi catena.o
+
+catena.o: catena.c
+	ccc catena.c
+
+purga:
+	rm -f catena catena.o
+
+.PHONY: omnia purga

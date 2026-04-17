@@ -1,0 +1,14 @@
+# Faceplica — superficies
+
+omnia: superficies
+
+superficies: superficies.o
+	ldi superficies.o
+
+superficies.o: superficies.c
+	ccc superficies.c
+
+purga:
+	rm -f superficies superficies.o
+
+.PHONY: omnia purga

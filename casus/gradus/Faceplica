@@ -1,0 +1,14 @@
+# Faceplica — gradus
+
+omnia: gradus
+
+gradus: gradus.o
+	ldi gradus.o
+
+gradus.o: gradus.c
+	ccc gradus.c
+
+purga:
+	rm -f gradus gradus.o
+
+.PHONY: omnia purga

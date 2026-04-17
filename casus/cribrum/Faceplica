@@ -1,0 +1,14 @@
+# Faceplica — cribrum
+
+omnia: cribrum
+
+cribrum: cribrum.o
+	ldi cribrum.o
+
+cribrum.o: cribrum.c
+	ccc cribrum.c
+
+purga:
+	rm -f cribrum cribrum.o
+
+.PHONY: omnia purga

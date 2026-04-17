@@ -1,0 +1,14 @@
+# Faceplica — kripke
+
+omnia: kripke
+
+kripke: kripke.o
+	ldi kripke.o
+
+kripke.o: kripke.c
+	ccc kripke.c
+
+purga:
+	rm -f kripke kripke.o
+
+.PHONY: omnia purga

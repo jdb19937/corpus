@@ -1,0 +1,14 @@
+# Faceplica — vigil
+
+omnia: vigil
+
+vigil: vigil.o
+	ldi vigil.o
+
+vigil.o: vigil.c
+	ccc vigil.c
+
+purga:
+	rm -f vigil vigil.o
+
+.PHONY: omnia purga

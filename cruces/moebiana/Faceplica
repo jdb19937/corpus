@@ -1,0 +1,14 @@
+# Faceplica — moebiana
+
+omnia: moebiana
+
+moebiana: moebiana.o
+	ldi moebiana.o
+
+moebiana.o: moebiana.c
+	ccc moebiana.c
+
+purga:
+	rm -f moebiana moebiana.o
+
+.PHONY: omnia purga

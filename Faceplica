@@ -1,0 +1,17 @@
+# Faceplica
+
+omnia:
+	face -C casus
+	face -C copulae
+	face -C cruces
+	face -C linguae
+	face -C silva
+
+purga:
+	face -C casus purga
+	face -C copulae purga
+	face -C cruces purga
+	face -C linguae purga
+	face -C silva purga
+
+.PHONY: omnia purga

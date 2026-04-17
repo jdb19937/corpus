@@ -1,0 +1,14 @@
+# Faceplica — concordantia
+
+omnia: concordantia
+
+concordantia: concordantia.o
+	ldi concordantia.o
+
+concordantia.o: concordantia.c
+	ccc concordantia.c
+
+purga:
+	rm -f concordantia concordantia.o
+
+.PHONY: omnia purga

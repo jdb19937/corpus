@@ -1,0 +1,14 @@
+# Faceplica — turres
+
+omnia: turres
+
+turres: turres.o
+	ldi turres.o
+
+turres.o: turres.c
+	ccc turres.c
+
+purga:
+	rm -f turres turres.o
+
+.PHONY: omnia purga

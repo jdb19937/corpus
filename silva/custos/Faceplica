@@ -1,0 +1,14 @@
+# Faceplica — custos
+
+omnia: custos
+
+custos: custos.o
+	ldi custos.o
+
+custos.o: custos.c
+	ccc custos.c
+
+purga:
+	rm -f custos custos.o
+
+.PHONY: omnia purga

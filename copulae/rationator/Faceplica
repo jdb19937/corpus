@@ -1,0 +1,16 @@
+# Faceplica — rationator (mini-Prolog)
+
+OBJECTA = rationator.o baselas.o resolutor.o terminus.o unificatio.o
+
+omnia: rationator
+
+rationator: $(OBJECTA)
+	ldi $^
+
+%.o: %.c rationator.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) rationator
+
+.PHONY: omnia purga

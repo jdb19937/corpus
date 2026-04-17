@@ -1,0 +1,14 @@
+# Faceplica — divisores
+
+omnia: divisores
+
+divisores: divisores.o
+	ldi divisores.o
+
+divisores.o: divisores.c
+	ccc divisores.c
+
+purga:
+	rm -f divisores divisores.o
+
+.PHONY: omnia purga

@@ -1,0 +1,14 @@
+# Faceplica — dicta
+
+omnia: dicta
+
+dicta: dicta.o
+	ldi dicta.o
+
+dicta.o: dicta.c
+	ccc dicta.c
+
+purga:
+	rm -f dicta dicta.o
+
+.PHONY: omnia purga

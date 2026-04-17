@@ -1,0 +1,14 @@
+# Faceplica — constans
+
+omnia: constans
+
+constans: constans.o
+	ldi constans.o
+
+constans.o: constans.c
+	ccc constans.c
+
+purga:
+	rm -f constans constans.o
+
+.PHONY: omnia purga

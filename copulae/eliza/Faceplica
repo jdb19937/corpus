@@ -1,0 +1,16 @@
+# Faceplica — eliza (ELIZA Rogeriana)
+
+OBJECTA = eliza.o memoria.o patrona.o responsa.o verbum.o
+
+omnia: eliza
+
+eliza: $(OBJECTA)
+	ldi $^
+
+%.o: %.c eliza.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) eliza
+
+.PHONY: omnia purga

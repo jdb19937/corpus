@@ -1,0 +1,14 @@
+# Faceplica — declinatio
+
+omnia: declinatio
+
+declinatio: declinatio.o
+	ldi declinatio.o
+
+declinatio.o: declinatio.c
+	ccc declinatio.c
+
+purga:
+	rm -f declinatio declinatio.o
+
+.PHONY: omnia purga

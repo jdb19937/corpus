@@ -1,0 +1,14 @@
+# Faceplica — radicatio
+
+omnia: radicatio
+
+radicatio: radicatio.o
+	ldi radicatio.o
+
+radicatio.o: radicatio.c
+	ccc radicatio.c
+
+purga:
+	rm -f radicatio radicatio.o
+
+.PHONY: omnia purga

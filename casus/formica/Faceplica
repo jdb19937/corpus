@@ -1,0 +1,14 @@
+# Faceplica — formica
+
+omnia: formica
+
+formica: formica.o
+	ldi formica.o
+
+formica.o: formica.c
+	ccc formica.c
+
+purga:
+	rm -f formica formica.o
+
+.PHONY: omnia purga

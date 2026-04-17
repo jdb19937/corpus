@@ -1,0 +1,14 @@
+# Faceplica — vita
+
+omnia: vita
+
+vita: vita.o
+	ldi vita.o
+
+vita.o: vita.c
+	ccc vita.c
+
+purga:
+	rm -f vita vita.o
+
+.PHONY: omnia purga

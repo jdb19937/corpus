@@ -1,0 +1,14 @@
+# Faceplica — scriba
+
+omnia: scriba
+
+scriba: scriba.o
+	ldi scriba.o
+
+scriba.o: scriba.c
+	ccc scriba.c
+
+purga:
+	rm -f scriba scriba.o
+
+.PHONY: omnia purga

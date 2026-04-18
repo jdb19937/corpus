@@ -58,7 +58,7 @@ responde(const char *input, unsigned seed)
 int
 main(int argc, char **argv)
 {
-    unsigned seed = (unsigned)time(NULL);
+    unsigned seed = 67;
 
     if (argc > 1) {
         char buf[1024];

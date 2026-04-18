@@ -21,7 +21,7 @@ int
 main(int argc, char **argv)
 {
     int n = 8;
-    unsigned seed = (unsigned)time(NULL);
+    unsigned seed = 67;
 
     if (argc >= 2) {
         int v = atoi(argv[1]);

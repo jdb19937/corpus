@@ -1,0 +1,16 @@
+# Faceplica — meteora
+
+OBJECTA = meteora.o atmosphaera.o traiectus.o impactus.o
+
+omnia: meteora
+
+meteora: $(OBJECTA)
+	ldi $^
+
+%.o: %.c meteora.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) meteora
+
+.PHONY: omnia purga

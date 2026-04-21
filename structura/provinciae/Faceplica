@@ -1,0 +1,16 @@
+# Faceplica — provinciae
+
+OBJECTA = provinciae.o regiones.o polygonum.o mensura.o
+
+omnia: provinciae
+
+provinciae: $(OBJECTA)
+	ldi $^
+
+%.o: %.c provinciae.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) provinciae
+
+.PHONY: omnia purga

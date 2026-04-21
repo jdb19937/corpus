@@ -1,0 +1,16 @@
+# Faceplica — tectonica
+
+OBJECTA = tectonica.o placae.o crusta.o collisio.o
+
+omnia: tectonica
+
+tectonica: $(OBJECTA)
+	ldi $^
+
+%.o: %.c tectonica.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) tectonica
+
+.PHONY: omnia purga

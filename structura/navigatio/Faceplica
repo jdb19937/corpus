@@ -1,0 +1,16 @@
+# Faceplica — navigatio
+
+OBJECTA = navigatio.o portus.o cursus.o coordinatae.o
+
+omnia: navigatio
+
+navigatio: $(OBJECTA)
+	ldi $^
+
+%.o: %.c navigatio.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) navigatio
+
+.PHONY: omnia purga

@@ -1,0 +1,16 @@
+# Faceplica — galaxia
+
+OBJECTA = galaxia.o corpora.o gravitas.o integrator.o
+
+omnia: galaxia
+
+galaxia: $(OBJECTA)
+	ldi $^
+
+%.o: %.c galaxia.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) galaxia
+
+.PHONY: omnia purga

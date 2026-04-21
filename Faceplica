@@ -6,6 +6,7 @@ omnia:
 	face -C cruces
 	face -C linguae
 	face -C silva
+	face -C structura
 
 purga:
 	face -C casus purga
@@ -13,5 +14,6 @@ purga:
 	face -C cruces purga
 	face -C linguae purga
 	face -C silva purga
+	face -C structura purga
 
 .PHONY: omnia purga

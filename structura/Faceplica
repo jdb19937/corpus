@@ -1,0 +1,23 @@
+# Faceplica
+
+omnia:
+	face -C orbes
+	face -C stellae
+	face -C provinciae
+	face -C meteora
+	face -C galaxia
+	face -C tectonica
+	face -C montes
+	face -C navigatio
+
+purga:
+	face -C orbes purga
+	face -C stellae purga
+	face -C provinciae purga
+	face -C meteora purga
+	face -C galaxia purga
+	face -C tectonica purga
+	face -C montes purga
+	face -C navigatio purga
+
+.PHONY: omnia purga

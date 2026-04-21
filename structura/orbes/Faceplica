@@ -1,0 +1,16 @@
+# Faceplica — orbes
+
+OBJECTA = orbes.o planetae.o kepler.o vectores.o
+
+omnia: orbes
+
+orbes: $(OBJECTA)
+	ldi $^
+
+%.o: %.c orbes.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) orbes
+
+.PHONY: omnia purga

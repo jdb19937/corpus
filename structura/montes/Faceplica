@@ -1,0 +1,16 @@
+# Faceplica — montes
+
+OBJECTA = montes.o terrenum.o elevatio.o gradientes.o
+
+omnia: montes
+
+montes: $(OBJECTA)
+	ldi $^
+
+%.o: %.c montes.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) montes
+
+.PHONY: omnia purga

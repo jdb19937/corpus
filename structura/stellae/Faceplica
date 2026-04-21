@@ -1,0 +1,16 @@
+# Faceplica — stellae
+
+OBJECTA = stellae.o catalogus.o magnitudo.o coordinatae.o
+
+omnia: stellae
+
+stellae: $(OBJECTA)
+	ldi $^
+
+%.o: %.c stellae.h
+	ccc $<
+
+purga:
+	rm -f $(OBJECTA) stellae
+
+.PHONY: omnia purga

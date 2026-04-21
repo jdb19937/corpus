@@ -41,7 +41,8 @@ vis_in(const Corpus *bodies, int n, int i, double G)
     Vec3d F = { 0.0, 0.0, 0.0 };
     double eps2 = 1.0;  /* softening */
     for (int j = 0; j < n; j++) {
-        if (j == i) continue;
+        if (j == i)
+            continue;
         Vec3d d = v3_sub(bodies[j].r, bodies[i].r);
         double r2 = v3_dot(d, d) + eps2;
         double inv = 1.0 / (r2 * sqrt(r2));
@@ -58,7 +59,7 @@ energia_total(const Corpus *bodies, int n, double G)
     for (int i = 0; i < n; i++) {
         K += 0.5 * bodies[i].m * v3_dot(bodies[i].v, bodies[i].v);
         for (int j = i + 1; j < n; j++) {
-            Vec3d d = v3_sub(bodies[j].r, bodies[i].r);
+            Vec3d d  = v3_sub(bodies[j].r, bodies[i].r);
             double r = sqrt(v3_dot(d, d) + 1.0);
             U -= G * bodies[i].m * bodies[j].m / r;
         }

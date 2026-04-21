@@ -14,8 +14,8 @@ int
 main(void)
 {
     srand(41);
-    double G = 4.498e-3;   /* unitates reductae */
-    double dt = 0.001;
+    double G   = 4.498e-3;   /* unitates reductae */
+    double dt  = 0.001;
     int passus = 50;
 
     printf("=== Galaxia Localis ===\n");
@@ -35,11 +35,13 @@ main(void)
 
     printf("nomina corporum:\n");
     for (int i = 0; i < N_CORPORUM; i++) {
-        Corpus *b = &corpora[i];
-        Vec3d f = vis_in(corpora, N_CORPORUM, i, G);
+        Corpus      *b = &corpora[i];
+        Vec3d f     = vis_in(corpora, N_CORPORUM, i, G);
         double fmag = sqrt(v3_dot(f, f));
-        fprintf(stderr, "  [%s] r=(%.9f,%.9f,%.9f) |F|=%.9e\n",
-                b->nomen, b->r.x, b->r.y, b->r.z, fmag);
+        fprintf(
+            stderr, "  [%s] r=(%.9f,%.9f,%.9f) |F|=%.9e\n",
+            b->nomen, b->r.x, b->r.y, b->r.z, fmag
+        );
         printf("  %-10s  idx=%d\n", b->nomen, b->indicium);
     }
     return 0;

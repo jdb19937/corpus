@@ -11,7 +11,8 @@
 double
 densitas_aeris(double altitudo_m)
 {
-    if (altitudo_m < 0.0) altitudo_m = 0.0;
+    if (altitudo_m < 0.0)
+        altitudo_m = 0.0;
     double H = 8500.0;
     return 1.225 * exp(-altitudo_m / H);
 }

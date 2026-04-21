@@ -32,17 +32,23 @@ main(void)
 
     for (int i = 0; i < 4; i++) {
         Iter it = cursus_solve(itinera[i].x->loc, itinera[i].y->loc, 20.0);
-        fprintf(stderr, "[%s->%s] d=%.6f b0=%.6f bf=%.6f t=%.6f\n",
-                itinera[i].x->nomen, itinera[i].y->nomen,
-                it.distantia_km, it.bearing_init_grad,
-                it.bearing_fin_grad, it.duratio_horae);
-        printf("  %-8s -> %-8s  d=%.0f km  b0=%.0f  t=%.0f h\n",
-               itinera[i].x->nomen, itinera[i].y->nomen,
-               it.distantia_km, it.bearing_init_grad, it.duratio_horae);
+        fprintf(
+            stderr, "[%s->%s] d=%.6f b0=%.6f bf=%.6f t=%.6f\n",
+            itinera[i].x->nomen, itinera[i].y->nomen,
+            it.distantia_km, it.bearing_init_grad,
+            it.bearing_fin_grad, it.duratio_horae
+        );
+        printf(
+            "  %-8s -> %-8s  d=%.0f km  b0=%.0f  t=%.0f h\n",
+            itinera[i].x->nomen, itinera[i].y->nomen,
+            it.distantia_km, it.bearing_init_grad, it.duratio_horae
+        );
 
         Vector2 ned = velocitas_ned(20.0, it.bearing_init_grad);
-        printf("    v_ned = (N=%.1f, E=%.1f) kn\n",
-               (double)ned.n, (double)ned.e);
+        printf(
+            "    v_ned = (N=%.1f, E=%.1f) kn\n",
+            (double)ned.n, (double)ned.e
+        );
     }
 
     /* Function pointer: probat indirect call ABI cum struct arg.

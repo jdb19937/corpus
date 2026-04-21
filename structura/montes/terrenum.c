@@ -23,15 +23,16 @@ terrenum_init(void)
         float hmax = (float)montes[k].altitudo_max_m;
         for (int i = 0; i < GRID_N; i++) {
             for (int j = 0; j < GRID_N; j++) {
-                float u = ((float)i - (GRID_N - 1) * 0.5f) / (float)GRID_N;
-                float v = ((float)j - (GRID_N - 1) * 0.5f) / (float)GRID_N;
-                float d = sqrtf(u * u + v * v);
+                float u   = ((float)i - (GRID_N - 1) * 0.5f) / (float)GRID_N;
+                float v   = ((float)j - (GRID_N - 1) * 0.5f) / (float)GRID_N;
+                float d   = sqrtf(u * u + v * v);
                 float alt = hmax * (1.0f - d * 1.2f);
-                if (alt < 0.0f) alt = 0.0f;
-                montes[k].grid[i][j].alt_m = alt;
-                montes[k].grid[i][j].slope = d * 45.0f;
-                montes[k].grid[i][j].cat   = (int16_t)(alt > hmax * 0.5f ? 2 : 1);
-                montes[k].grid[i][j].flux  = (int16_t)(i + j + k);
+                if (alt < 0.0f)
+                    alt = 0.0f;
+                montes[k] .grid[i][j].alt_m = alt;
+                montes[k] .grid[i][j].slope = d * 45.0f;
+                montes[k] .grid[i][j].cat   = (int16_t)(alt > hmax * 0.5f ? 2 : 1);
+                montes[k] .grid[i][j].flux  = (int16_t)(i + j + k);
             }
         }
     }

@@ -16,7 +16,7 @@ kepler_solve(double M, double e)
     for (int i = 0; i < 20; i++) {
         double f  = E - e * sin(E) - M;
         double fp = 1.0 - e * cos(E);
-        E = E - f / fp;
+        E         = E - f / fp;
     }
     return E;
 }

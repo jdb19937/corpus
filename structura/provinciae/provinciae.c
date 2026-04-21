@@ -22,24 +22,34 @@ main(void)
         Mensurae m = poly_mensurae(regiones[i]);
         double a   = poly_area_signata(regiones[i]);
 
-        fprintf(stderr, "[%s] a_sig=%.6f area=%.6f peri=%.6f\n",
-                regiones[i].nomen, a, m.area_km2, m.perimetrum_km);
+        fprintf(
+            stderr, "[%s] a_sig=%.6f area=%.6f peri=%.6f\n",
+            regiones[i].nomen, a, m.area_km2, m.perimetrum_km
+        );
 
-        printf("%-14s  n=%2d  area=%.0f km2  peri=%.0f km  pop=%.1f\n",
-               regiones[i].nomen, regiones[i].n,
-               m.area_km2, m.perimetrum_km, regiones[i].pop_millionum);
-        printf("  centroid (lon=%.1f, lat=%.1f)\n",
-               m.centroid.lon, m.centroid.lat);
+        printf(
+            "%-14s  n=%2d  area=%.0f km2  peri=%.0f km  pop=%.1f\n",
+            regiones[i].nomen, regiones[i].n,
+            m.area_km2, m.perimetrum_km, regiones[i].pop_millionum
+        );
+        printf(
+            "  centroid (lon=%.1f, lat=%.1f)\n",
+            m.centroid.lon, m.centroid.lat
+        );
     }
 
     /* distantia inter centroidos primarum duarum */
     if (N_REGIONUM >= 2) {
         Punctum c0 = poly_centroid(&regiones[0]);
         Punctum c1 = poly_centroid(&regiones[1]);
-        printf("\nd(centroid[0], centroid[1]) = %.0f km\n",
-               haversine_km(c0, c1));
-        printf("bearing[0->1] = %.0f grad\n",
-               bearing_grad(c0, c1));
+        printf(
+            "\nd(centroid[0], centroid[1]) = %.0f km\n",
+            haversine_km(c0, c1)
+        );
+        printf(
+            "bearing[0->1] = %.0f grad\n",
+            bearing_grad(c0, c1)
+        );
     }
 
     return 0;

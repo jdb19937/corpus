@@ -23,8 +23,10 @@ ad_galacticas(Coord eq)
     double cg = cos(rad(delta_G));
     double sb = sd * sg + cd * cg * cos(rad(ra_deg - alpha_G));
     double b  = asin(sb);
-    double l  = l_NCP - atan2(cd * sin(rad(ra_deg - alpha_G)),
-                              sd * cg - cd * sg * cos(rad(ra_deg - alpha_G)));
+    double l  = l_NCP - atan2(
+        cd * sin(rad(ra_deg - alpha_G)),
+        sd * cg - cd * sg * cos(rad(ra_deg - alpha_G))
+    );
     Coord r = { deg(l), deg(b) };
     return r;
 }
@@ -37,8 +39,10 @@ angulus_inter(Coord a, Coord b)
     double d1  = rad(a.dec);
     double d2  = rad(b.dec);
     double c   = sin(d1) * sin(d2) + cos(d1) * cos(d2) * cos(ra1 - ra2);
-    if (c > 1.0) c = 1.0;
-    if (c < -1.0) c = -1.0;
+    if (c > 1.0)
+        c = 1.0;
+    if (c < -1.0)
+        c = -1.0;
     return deg(acos(c));
 }
 

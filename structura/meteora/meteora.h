@@ -10,10 +10,10 @@
  * necnon accipitur sic.
  */
 typedef struct {
-    double t;        /* tempus (s)                 */
-    double x, y, z;  /* positio (m)                */
-    double vx, vy, vz; /* velocitas (m/s)          */
-    double m;        /* massa currens (kg)         */
+    double t;           /* tempus (s)               */
+    double x, y, z;     /* positio (m)              */
+    double vx, vy, vz;  /* velocitas (m/s)          */
+    double m;           /* massa currens (kg)       */
 } Status;
 
 /*
@@ -21,7 +21,9 @@ typedef struct {
  * Probat ABI in contextu unionum et nested aggregates.
  */
 typedef union {
-    struct { float fe, ni, si, mg; } fr;
+    struct {
+        float fe, ni, si, mg;
+    } fr;
     double  packed[2];
     uint64_t raw;
 } Compositio;

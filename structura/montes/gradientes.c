@@ -12,8 +12,8 @@ grad_in(const MonsData *m, int i, int j)
     int j0 = j > 0 ? j - 1 : j;
     int j1 = j < GRID_N - 1 ? j + 1 : j;
     Gradiens g;
-    g.dx = 0.5f * (m->grid[i1][j].alt_m - m->grid[i0][j].alt_m);
-    g.dy = 0.5f * (m->grid[i][j1].alt_m - m->grid[i][j0].alt_m);
+    g .dx = 0.5f * (m->grid[i1][j].alt_m - m->grid[i0][j].alt_m);
+    g .dy = 0.5f * (m->grid[i][j1].alt_m - m->grid[i][j0].alt_m);
     return g;
 }
 

@@ -43,19 +43,22 @@ step_rk2(Status s, double dt, double radius, double Cd)
         s.vx + dt * k2.vx, s.vy + dt * k2.vy, s.vz + dt * k2.vz,
         s.m + dt * k2.m
     };
-    if (r.m < 0.0) r.m = 0.0;
-    if (r.z < 0.0) r.z = 0.0;
+    if (r.m < 0.0)
+        r.m = 0.0;
+    if (r.z < 0.0)
+        r.z = 0.0;
     return r;
 }
 
 Status
 integra(Status s0, double radius, double dt, int passus)
 {
-    Status s = s0;
+    Status s  = s0;
     double Cd = 1.0;
     for (int i = 0; i < passus; i++) {
         s = step_rk2(s, dt, radius, Cd);
-        if (s.z <= 0.0) break;
+        if (s.z <= 0.0)
+            break;
     }
     return s;
 }

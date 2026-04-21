@@ -49,7 +49,8 @@ Mensurae
 poly_mensurae(Regio r)
 {
     double lat0 = 0.0;
-    for (int i = 0; i < r.n; i++) lat0 += r.vert[i].lat;
+    for (int i = 0; i < r.n; i++)
+        lat0 += r.vert[i].lat;
     lat0 /= r.n;
 
     /* area in km^2: scale degrees by km-per-degree at centroid lat */
@@ -59,8 +60,8 @@ poly_mensurae(Regio r)
     double area_km2   = fabs(a_deg) * km_per_lat * km_per_lon;
 
     Mensurae m;
-    m.area_km2      = area_km2;
-    m.centroid      = poly_centroid(&r);
-    m.perimetrum_km = poly_perimetrum(&r);
+    m .area_km2      = area_km2;
+    m .centroid      = poly_centroid(&r);
+    m .perimetrum_km = poly_perimetrum(&r);
     return m;
 }

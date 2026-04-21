@@ -20,14 +20,18 @@ main(void)
     double t = 2.0;  /* anni post epocham */
     for (int i = 0; i < N_PLANETARUM; i++) {
         Planeta p = planetae[i];
-        Vec3 r = positio_in_orbe(p.orb, t);
-        double d = vec_norma(r);
+        Vec3 r    = positio_in_orbe(p.orb, t);
+        double d  = vec_norma(r);
 
-        fprintf(stderr, "[%s] r = (%.6f, %.6f, %.6f)\n",
-                p.nomen, r.x, r.y, r.z);
+        fprintf(
+            stderr, "[%s] r = (%.6f, %.6f, %.6f)\n",
+            p.nomen, r.x, r.y, r.z
+        );
 
-        printf("%-10s a=%.1f AU  |r|=%.1f  id=%lld\n",
-               p.nomen, p.orb.a, d, (long long)p.orb.id);
+        printf(
+            "%-10s a=%.1f AU  |r|=%.1f  id=%lld\n",
+            p.nomen, p.orb.a, d, (long long)p.orb.id
+        );
     }
 
     /* Vec3 per valorem: probat HFA classificationem */

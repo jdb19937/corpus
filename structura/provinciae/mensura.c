@@ -18,7 +18,7 @@ haversine_km(Punctum a, Punctum b)
     double la1  = rad(a.lat);
     double la2  = rad(b.lat);
     double h    = sin(dlat / 2.0) * sin(dlat / 2.0)
-                + cos(la1) * cos(la2) * sin(dlon / 2.0) * sin(dlon / 2.0);
+        + cos(la1) * cos(la2) * sin(dlon / 2.0) * sin(dlon / 2.0);
     return 2.0 * R_TERRA_KM * asin(sqrt(h));
 }
 
@@ -31,6 +31,7 @@ bearing_grad(Punctum a, Punctum b)
     double y    = sin(dlon) * cos(la2);
     double x    = cos(la1) * sin(la2) - sin(la1) * cos(la2) * cos(dlon);
     double br   = deg(atan2(y, x));
-    if (br < 0.0) br += 360.0;
+    if (br < 0.0)
+        br += 360.0;
     return br;
 }

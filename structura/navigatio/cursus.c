@@ -21,7 +21,7 @@ distantia_km(Locus a, Locus b)
     double la1  = rad(a.lat);
     double la2  = rad(b.lat);
     double h    = sin(dlat / 2.0) * sin(dlat / 2.0)
-                + cos(la1) * cos(la2) * sin(dlon / 2.0) * sin(dlon / 2.0);
+        + cos(la1) * cos(la2) * sin(dlon / 2.0) * sin(dlon / 2.0);
     return 2.0 * R_TERRA_KM * asin(sqrt(h));
 }
 
@@ -34,7 +34,8 @@ bearing_init(Locus a, Locus b)
     double y    = sin(dlon) * cos(la2);
     double x    = cos(la1) * sin(la2) - sin(la1) * cos(la2) * cos(dlon);
     double br   = deg(atan2(y, x));
-    if (br < 0.0) br += 360.0;
+    if (br < 0.0)
+        br += 360.0;
     return br;
 }
 
@@ -43,7 +44,8 @@ bearing_final(Locus a, Locus b)
 {
     Locus rev = { a.lat, a.lon };
     double br = bearing_init(b, rev) + 180.0;
-    if (br >= 360.0) br -= 360.0;
+    if (br >= 360.0)
+        br -= 360.0;
     return br;
 }
 
@@ -67,7 +69,7 @@ velocitas_ned(double vknot, double bearing_grad)
 {
     double b = rad(bearing_grad);
     Vector2 r;
-    r.n = (float)(vknot * cos(b));
-    r.e = (float)(vknot * sin(b));
+    r .n = (float)(vknot * cos(b));
+    r .e = (float)(vknot * sin(b));
     return r;
 }

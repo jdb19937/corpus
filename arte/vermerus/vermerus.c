@@ -291,6 +291,17 @@ static int scribere_ppm(const char *n) {
     return m == (size_t)PIX * 3 ? 0 : 1;
 }
 
+static int rgb_ad_256(unsigned long r, unsigned long g, unsigned long b) {
+    unsigned long mx = r>g?(r>b?r:b):(g>b?g:b), mn = r<g?(r<b?r:b):(g<b?g:b);
+    if (mx - mn < 10) {
+        unsigned long gr = (r+g+b)/3;
+        if (gr < 8) return 16;
+        if (gr > 248) return 231;
+        return 232 + (int)((gr - 8) * 24 / 240);
+    }
+    return 16 + 36*(int)(r*5/255) + 6*(int)(g*5/255) + (int)(b*5/255);
+}
+
 static void reddere_ansi(void) {
     int cols = 64, rows = 32;
     for (int cy = 0; cy < rows; cy++) {
@@ -311,9 +322,9 @@ static void reddere_ansi(void) {
                     }
                 }
             if (!ct) ct = 1; if (!cb) cb = 1;
-            printf("\x1b[38;2;%lu;%lu;%lum\x1b[48;2;%lu;%lu;%lum\xe2\x96\x80",
-                tr/(unsigned long)ct, tg/(unsigned long)ct, tb/(unsigned long)ct,
-                br/(unsigned long)cb, bg/(unsigned long)cb, bb/(unsigned long)cb);
+            int fg = rgb_ad_256(tr/ct, tg/ct, tb/ct);
+            int bg_ = rgb_ad_256(br/cb, bg/cb, bb/cb);
+            printf("\x1b[38;5;%dm\x1b[48;5;%dm\xe2\x96\x80", fg, bg_);
         }
         printf("\x1b[0m\n");
     }

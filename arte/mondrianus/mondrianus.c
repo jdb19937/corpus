@@ -249,6 +249,17 @@ static void pixel_medius(int px, int py, int width, Color *out) {
     out->b = (unsigned char)(bl / (unsigned long)count);
 }
 
+static int rgb_ad_256(unsigned long r, unsigned long g, unsigned long b) {
+    unsigned long mx = r>g?(r>b?r:b):(g>b?g:b), mn = r<g?(r<b?r:b):(g<b?g:b);
+    if (mx - mn < 10) {
+        unsigned long gr = (r+g+b)/3;
+        if (gr < 8) return 16;
+        if (gr > 248) return 231;
+        return 232 + (int)((gr - 8) * 24 / 240);
+    }
+    return 16 + 36*(int)(r*5/255) + 6*(int)(g*5/255) + (int)(b*5/255);
+}
+
 static void reddere_ansi(void) {
     int cols = 64;
     int rows = 32;
@@ -286,8 +297,9 @@ static void reddere_ansi(void) {
             bot.r = (unsigned char)(br/(unsigned long)cb);
             bot.g = (unsigned char)(bg/(unsigned long)cb);
             bot.b = (unsigned char)(bb/(unsigned long)cb);
-            printf("\x1b[38;2;%d;%d;%dm\x1b[48;2;%d;%d;%dm\xe2\x96\x80",
-                   top.r, top.g, top.b, bot.r, bot.g, bot.b);
+            printf("\x1b[38;5;%dm\x1b[48;5;%dm\xe2\x96\x80",
+                   rgb_ad_256(top.r, top.g, top.b),
+                   rgb_ad_256(bot.r, bot.g, bot.b));
             (void)pixel_medius;
         }
         printf("\x1b[0m\n");

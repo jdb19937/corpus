@@ -115,6 +115,18 @@ static Punctum iso_ad_2D(double i, double j, double k, double scala) {
     return p;
 }
 
+static void linea(Punctum a, Punctum b, Color c) {
+    double dx = b.x - a.x, dy = b.y - a.y;
+    double L = sqrt(dx*dx + dy*dy);
+    int steps = (int)(L + 1);
+    for (int s = 0; s <= steps; s++) {
+        double t = (double)s / steps;
+        int x = (int)(a.x + t * dx + 0.5);
+        int y = (int)(a.y + t * dy + 0.5);
+        setpx(x, y, c);
+    }
+}
+
 static void depingere_cubum(double i, double j, double k, double scala,
                             Color sup, Color sin_, Color dex) {
     /* Vertices cubi ab (i,j,k) ad (i+1,j+1,k+1). */
@@ -139,6 +151,13 @@ static void depingere_cubum(double i, double j, double k, double scala,
     /* Facies sinistra (j+1): v010, v110, v111, v011 */
     Punctum sin_pts[4] = { v010, v110, v111, v011 };
     impl_polygon(sin_pts, 4, sin_);
+
+    /* Margines cubi ut singuli distinguantur. */
+    Color nigrum = {20, 20, 25};
+    linea(v001, v101, nigrum); linea(v101, v111, nigrum);
+    linea(v111, v011, nigrum); linea(v011, v001, nigrum);
+    linea(v100, v110, nigrum); linea(v110, v111, nigrum); linea(v101, v100, nigrum);
+    linea(v010, v110, nigrum); linea(v011, v010, nigrum);
 }
 
 /* ============================================================

@@ -1,0 +1,14 @@
+# Faceplica — leonardus
+
+omnia: leonardus
+
+leonardus: leonardus.o
+	ldi leonardus.o
+
+leonardus.o: leonardus.c
+	ccc leonardus.c
+
+purga:
+	rm -f leonardus leonardus.o
+
+.PHONY: omnia purga

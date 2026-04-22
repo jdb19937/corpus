@@ -1,0 +1,14 @@
+# Faceplica — socrates
+
+omnia: socrates
+
+socrates: socrates.o
+	ldi socrates.o
+
+socrates.o: socrates.c
+	ccc socrates.c
+
+purga:
+	rm -f socrates socrates.o
+
+.PHONY: omnia purga

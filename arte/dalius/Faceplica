@@ -1,0 +1,14 @@
+# Faceplica — dalius
+
+omnia: dalius
+
+dalius: dalius.o
+	ldi dalius.o
+
+dalius.o: dalius.c
+	ccc dalius.c
+
+purga:
+	rm -f dalius dalius.o
+
+.PHONY: omnia purga

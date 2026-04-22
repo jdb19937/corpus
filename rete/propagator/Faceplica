@@ -1,0 +1,14 @@
+# Faceplica — propagator
+
+omnia: propagator
+
+propagator: propagator.o
+	ldi propagator.o
+
+propagator.o: propagator.c
+	ccc propagator.c
+
+purga:
+	rm -f propagator propagator.o
+
+.PHONY: omnia purga

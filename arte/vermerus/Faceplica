@@ -1,0 +1,14 @@
+# Faceplica — vermerus
+
+omnia: vermerus
+
+vermerus: vermerus.o
+	ldi vermerus.o
+
+vermerus.o: vermerus.c
+	ccc vermerus.c
+
+purga:
+	rm -f vermerus vermerus.o
+
+.PHONY: omnia purga

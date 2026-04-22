@@ -1,0 +1,23 @@
+# Faceplica
+
+omnia:
+	face -C augusta
+	face -C cleopatra
+	face -C confucius
+	face -C hildegardis
+	face -C hypatia
+	face -C leonardus
+	face -C nicolaus
+	face -C socrates
+
+purga:
+	face -C augusta purga
+	face -C cleopatra purga
+	face -C confucius purga
+	face -C hildegardis purga
+	face -C hypatia purga
+	face -C leonardus purga
+	face -C nicolaus purga
+	face -C socrates purga
+
+.PHONY: omnia purga

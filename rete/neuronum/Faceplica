@@ -1,0 +1,14 @@
+# Faceplica — neuronum
+
+omnia: neuronum
+
+neuronum: neuronum.o
+	ldi neuronum.o
+
+neuronum.o: neuronum.c
+	ccc neuronum.c
+
+purga:
+	rm -f neuronum neuronum.o
+
+.PHONY: omnia purga

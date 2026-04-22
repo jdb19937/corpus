@@ -1,0 +1,14 @@
+# Faceplica — hildegardis
+
+omnia: hildegardis
+
+hildegardis: hildegardis.o
+	ldi hildegardis.o
+
+hildegardis.o: hildegardis.c
+	ccc hildegardis.c
+
+purga:
+	rm -f hildegardis hildegardis.o
+
+.PHONY: omnia purga

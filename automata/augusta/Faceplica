@@ -1,0 +1,14 @@
+# Faceplica — augusta
+
+omnia: augusta
+
+augusta: augusta.o
+	ldi augusta.o
+
+augusta.o: augusta.c
+	ccc augusta.c
+
+purga:
+	rm -f augusta augusta.o
+
+.PHONY: omnia purga

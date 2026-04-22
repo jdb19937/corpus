@@ -1,0 +1,14 @@
+# Faceplica — exponens
+
+omnia: exponens
+
+exponens: exponens.o
+	ldi exponens.o
+
+exponens.o: exponens.c
+	ccc exponens.c
+
+purga:
+	rm -f exponens exponens.o
+
+.PHONY: omnia purga

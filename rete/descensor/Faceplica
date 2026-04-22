@@ -1,0 +1,14 @@
+# Faceplica — descensor
+
+omnia: descensor
+
+descensor: descensor.o
+	ldi descensor.o
+
+descensor.o: descensor.c
+	ccc descensor.c
+
+purga:
+	rm -f descensor descensor.o
+
+.PHONY: omnia purga

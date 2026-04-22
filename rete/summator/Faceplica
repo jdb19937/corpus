@@ -1,0 +1,14 @@
+# Faceplica — summator
+
+omnia: summator
+
+summator: summator.o
+	ldi summator.o
+
+summator.o: summator.c
+	ccc summator.c
+
+purga:
+	rm -f summator summator.o
+
+.PHONY: omnia purga

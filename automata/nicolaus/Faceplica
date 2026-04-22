@@ -1,0 +1,14 @@
+# Faceplica — nicolaus
+
+omnia: nicolaus
+
+nicolaus: nicolaus.o
+	ldi nicolaus.o
+
+nicolaus.o: nicolaus.c
+	ccc nicolaus.c
+
+purga:
+	rm -f nicolaus nicolaus.o
+
+.PHONY: omnia purga

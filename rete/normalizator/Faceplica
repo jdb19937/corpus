@@ -1,0 +1,14 @@
+# Faceplica — normalizator
+
+omnia: normalizator
+
+normalizator: normalizator.o
+	ldi normalizator.o
+
+normalizator.o: normalizator.c
+	ccc normalizator.c
+
+purga:
+	rm -f normalizator normalizator.o
+
+.PHONY: omnia purga

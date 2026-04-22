@@ -1,0 +1,14 @@
+# Faceplica — kandinskius
+
+omnia: kandinskius
+
+kandinskius: kandinskius.o
+	ldi kandinskius.o
+
+kandinskius.o: kandinskius.c
+	ccc kandinskius.c
+
+purga:
+	rm -f kandinskius kandinskius.o
+
+.PHONY: omnia purga

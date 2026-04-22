@@ -1,0 +1,14 @@
+# Faceplica — pollockius
+
+omnia: pollockius
+
+pollockius: pollockius.o
+	ldi pollockius.o
+
+pollockius.o: pollockius.c
+	ccc pollockius.c
+
+purga:
+	rm -f pollockius pollockius.o
+
+.PHONY: omnia purga

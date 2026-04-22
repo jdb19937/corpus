@@ -1,0 +1,14 @@
+# Faceplica — escherus
+
+omnia: escherus
+
+escherus: escherus.o
+	ldi escherus.o
+
+escherus.o: escherus.c
+	ccc escherus.c
+
+purga:
+	rm -f escherus escherus.o
+
+.PHONY: omnia purga

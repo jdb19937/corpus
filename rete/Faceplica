@@ -1,0 +1,23 @@
+# Faceplica — rete
+
+omnia:
+	face -C neuronum
+	face -C propagator
+	face -C summator
+	face -C exponens
+	face -C sigmoides
+	face -C normalizator
+	face -C descensor
+	face -C attentor
+
+purga:
+	face -C neuronum purga
+	face -C propagator purga
+	face -C summator purga
+	face -C exponens purga
+	face -C sigmoides purga
+	face -C normalizator purga
+	face -C descensor purga
+	face -C attentor purga
+
+.PHONY: omnia purga

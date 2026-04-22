@@ -1,0 +1,14 @@
+# Faceplica — attentor
+
+omnia: attentor
+
+attentor: attentor.o
+	ldi attentor.o
+
+attentor.o: attentor.c
+	ccc attentor.c
+
+purga:
+	rm -f attentor attentor.o
+
+.PHONY: omnia purga

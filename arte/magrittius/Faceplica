@@ -1,0 +1,14 @@
+# Faceplica — magrittius
+
+omnia: magrittius
+
+magrittius: magrittius.o
+	ldi magrittius.o
+
+magrittius.o: magrittius.c
+	ccc magrittius.c
+
+purga:
+	rm -f magrittius magrittius.o
+
+.PHONY: omnia purga

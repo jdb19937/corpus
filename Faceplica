@@ -1,18 +1,24 @@
 # Faceplica
 
 omnia:
+	face -C arte
+	face -C automata
 	face -C casus
 	face -C copulae
 	face -C cruces
 	face -C linguae
+	face -C rete
 	face -C silva
 	face -C structura
 
 purga:
+	face -C arte purga
+	face -C automata purga
 	face -C casus purga
 	face -C copulae purga
 	face -C cruces purga
 	face -C linguae purga
+	face -C rete purga
 	face -C silva purga
 	face -C structura purga
 

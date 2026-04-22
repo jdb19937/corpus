@@ -1,0 +1,14 @@
+# Faceplica — confucius
+
+omnia: confucius
+
+confucius: confucius.o
+	ldi confucius.o
+
+confucius.o: confucius.c
+	ccc confucius.c
+
+purga:
+	rm -f confucius confucius.o
+
+.PHONY: omnia purga

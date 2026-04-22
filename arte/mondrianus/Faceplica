@@ -1,0 +1,14 @@
+# Faceplica — mondrianus
+
+omnia: mondrianus
+
+mondrianus: mondrianus.o
+	ldi mondrianus.o
+
+mondrianus.o: mondrianus.c
+	ccc mondrianus.c
+
+purga:
+	rm -f mondrianus mondrianus.o
+
+.PHONY: omnia purga

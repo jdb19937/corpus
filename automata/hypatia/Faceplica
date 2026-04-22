@@ -1,0 +1,14 @@
+# Faceplica — hypatia
+
+omnia: hypatia
+
+hypatia: hypatia.o
+	ldi hypatia.o
+
+hypatia.o: hypatia.c
+	ccc hypatia.c
+
+purga:
+	rm -f hypatia hypatia.o
+
+.PHONY: omnia purga

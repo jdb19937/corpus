@@ -1,0 +1,14 @@
+# Faceplica — sigmoides
+
+omnia: sigmoides
+
+sigmoides: sigmoides.o
+	ldi sigmoides.o
+
+sigmoides.o: sigmoides.c
+	ccc sigmoides.c
+
+purga:
+	rm -f sigmoides sigmoides.o
+
+.PHONY: omnia purga

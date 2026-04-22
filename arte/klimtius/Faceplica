@@ -1,0 +1,14 @@
+# Faceplica — klimtius
+
+omnia: klimtius
+
+klimtius: klimtius.o
+	ldi klimtius.o
+
+klimtius.o: klimtius.c
+	ccc klimtius.c
+
+purga:
+	rm -f klimtius klimtius.o
+
+.PHONY: omnia purga

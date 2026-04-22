@@ -1,0 +1,23 @@
+# Faceplica — arte
+
+omnia:
+	face -C dalius
+	face -C escherus
+	face -C kandinskius
+	face -C klimtius
+	face -C magrittius
+	face -C mondrianus
+	face -C pollockius
+	face -C vermerus
+
+purga:
+	face -C dalius purga
+	face -C escherus purga
+	face -C kandinskius purga
+	face -C klimtius purga
+	face -C magrittius purga
+	face -C mondrianus purga
+	face -C pollockius purga
+	face -C vermerus purga
+
+.PHONY: omnia purga

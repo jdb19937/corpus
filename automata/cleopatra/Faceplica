@@ -1,0 +1,14 @@
+# Faceplica — cleopatra
+
+omnia: cleopatra
+
+cleopatra: cleopatra.o
+	ldi cleopatra.o
+
+cleopatra.o: cleopatra.c
+	ccc cleopatra.c
+
+purga:
+	rm -f cleopatra cleopatra.o
+
+.PHONY: omnia purga

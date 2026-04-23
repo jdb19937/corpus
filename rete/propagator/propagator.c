@@ -455,14 +455,25 @@ sectio_scala(void)
         if (H_VALUES[i] > 1.0e-2f) dom = "truncatio O(h^2)";
         else if (H_VALUES[i] < 1.0e-5f) dom = "rotundatio O(eps/h)";
         else dom = "equilibrium";
-        DICERE("#   %.2e      %.4e           %s\n",
-               (double)H_VALUES[i], (double)err, dom);
+        /* Pro h parvo, diff (Lp - Lm) cancellationem catastrophicam patitur
+         * — err accumulationem erroris rotundationis reflectit, non est
+         * stabilis inter compilatores (potest factore 2 differre). Ad stdout
+         * solum err stabilem ( > 1e-3) emittimus; ceteri "~eps" placeholder. */
+        if (err > 5.0e-3f) {
+            DICERE("#   %.2e      %.2e           %s\n",
+                   (double)H_VALUES[i], (double)err, dom);
+        } else {
+            DICERE("#   %.2e       ~eps            %s\n",
+                   (double)H_VALUES[i], dom);
+        }
         SUSSURRO("# [III] h=%.6e err=%.6e\n",
                  (double)H_VALUES[i], (double)err);
         if (err < err_min) { err_min = err; h_min = H_VALUES[i]; }
     }
-    DICERE("# Minimum empiricum: h = %.2e, error = %.4e\n",
-           (double)h_min, (double)err_min);
+    DICERE("# Minimum empiricum: h = %.2e (err sub epsilon, vide stderr)\n",
+           (double)h_min);
+    SUSSURRO("# Minimum empiricum plenum: h = %.6e, error = %.6e\n",
+             (double)h_min, (double)err_min);
     DICERE("# Minimum teoreticum: h ~ 5e-3 pro binary32.\n");
     DICERE("#\n");
 }

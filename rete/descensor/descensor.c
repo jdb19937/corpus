@@ -428,16 +428,26 @@ sectio_exceptiones(void)
     };
     const int NT = (int)(sizeof TESTS / sizeof TESTS[0]);
     DICERE("#  operatio             flag elicitum         valor\n");
+    /* C99 §6.6: operandi volatilis operatio non constans est, ergo
+     * compilator operationem non-foldet in compile-time, et vexilla
+     * fenv runtime-emissa fiunt uniformia per omnes compilatores
+     * (pragma FENV_ACCESS ON semper respectata). */
+    volatile float v_flt_max = FLT_MAX;
+    volatile float v_flt_min = FLT_MIN;
+    volatile float v_one     = 1.0f;
+    volatile float v_neg_one = -1.0f;
+    volatile float v_eps     = FLT_EPSILON;
+    volatile float v_zero    = 0.0f;
     for (int i = 0; i < NT; i++) {
         feclearexcept(FE_ALL_EXCEPT);
         volatile float r = 0.0f;
         switch (i) {
-            case 0: r = FLT_MAX * 2.0f; break;
-            case 1: r = 1.0f / FLT_MAX; break;
-            case 2: r = sqrtf(-1.0f); break;
-            case 3: r = 1.0f / 0.0f; break;
-            case 4: r = FLT_MIN * 0.5f; break;
-            case 5: r = 1.0f + FLT_EPSILON * 0.7f; break;
+            case 0: r = v_flt_max * 2.0f; break;
+            case 1: r = v_one / v_flt_max; break;
+            case 2: r = sqrtf(v_neg_one); break;
+            case 3: r = v_one / v_zero; break;
+            case 4: r = v_flt_min * 0.5f; break;
+            case 5: r = v_one + v_eps * 0.7f; break;
         }
         int flags = fetestexcept(FE_ALL_EXCEPT);
         char status[64] = "";
@@ -491,8 +501,13 @@ sectio_traiectus(void)
             char bar_s[41] = {0}, bar_a[41] = {0};
             for (int k = 0; k < bs; k++) bar_s[k] = '=';
             for (int k = 0; k < ba; k++) bar_a[k] = '=';
-            DICERE("#  %4d   %.4e    %.4e   %-20s %-20s\n",
+            /* praecisione reducta ad stdout (.3e): accumulatio fluitantis
+             * inter compilatores potest differe 1 ULP; plena praecisio
+             * per SUSSURRO ad stderr. */
+            DICERE("#  %4d   %.3e    %.3e   %-20s %-20s\n",
                    it, (double)ls, (double)la, bar_s, bar_a);
+            SUSSURRO("# [V] iter=%d L_sgd=%.9e L_adam=%.9e\n",
+                     it, (double)ls, (double)la);
         }
         if (it == iter) break;
 

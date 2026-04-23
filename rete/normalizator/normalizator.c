@@ -224,9 +224,12 @@ imprime_statistica(const char *nomen, float m_f32, float v_f32,
     float ev = (float)((double)v_f32 - v_ref);
     float rel_m = (m_ref != 0.0) ? fabsf(em) / (float)fabs(m_ref) : 0.0f;
     float rel_v = (v_ref > 0.0) ? fabsf(ev) / (float)fabs(v_ref) : 0.0f;
-    DICERE("#  %-14s  mean=%+.6e  var=%.6e  (err_rel_m=%.2e, err_rel_v=%.2e)\n",
+    DICERE("#  %-14s  mean=%+.2e  var=%.2e  (err_rel_m=%.1e, err_rel_v=%.1e)\n",
            nomen, (double)m_f32, (double)v_f32,
            (double)rel_m, (double)rel_v);
+    SUSSURRO("#  %-14s  mean=%+.9e  var=%.9e  err_rel_m=%.6e  err_rel_v=%.6e\n",
+             nomen, (double)m_f32, (double)v_f32,
+             (double)rel_m, (double)rel_v);
 }
 
 /* ========================================================================
@@ -369,24 +372,24 @@ experimentum_ordo(void)
     stat_naivus_onepass(x3, n, &m3, &v3);
     DICERE("# n = %d, distributio bimodalis N(-5,1) + N(+5,1).\n", n);
     DICERE("# Naivus 1-pass (sensitivus ad ordinem):\n");
-    DICERE("#   ordinem 1    mean=%+.6f  var=%.6f\n",
+    DICERE("#   ordinem 1    mean=%+.3f  var=%.3f\n",
            (double)m1, (double)v1);
-    DICERE("#   ordinem 2    mean=%+.6f  var=%.6f\n",
+    DICERE("#   ordinem 2    mean=%+.3f  var=%.3f\n",
            (double)m2, (double)v2);
-    DICERE("#   ordinem 3    mean=%+.6f  var=%.6f\n",
+    DICERE("#   ordinem 3    mean=%+.3f  var=%.3f\n",
            (double)m3, (double)v3);
 
     stat_welford(x1, n, &m1, &v1);
     stat_welford(x2, n, &m2, &v2);
     stat_welford(x3, n, &m3, &v3);
     DICERE("# Welford (relative insensitivus):\n");
-    DICERE("#   ordinem 1    mean=%+.6f  var=%.6f\n",
+    DICERE("#   ordinem 1    mean=%+.3f  var=%.3f\n",
            (double)m1, (double)v1);
-    DICERE("#   ordinem 2    mean=%+.6f  var=%.6f\n",
+    DICERE("#   ordinem 2    mean=%+.3f  var=%.3f\n",
            (double)m2, (double)v2);
-    DICERE("#   ordinem 3    mean=%+.6f  var=%.6f\n",
+    DICERE("#   ordinem 3    mean=%+.3f  var=%.3f\n",
            (double)m3, (double)v3);
-    DICERE("# Exactum:       mean=%+.6f  var=%.6f\n", mref, vref);
+    DICERE("# Exactum:       mean=%+.3f  var=%.3f\n", mref, vref);
     DICERE("#\n");
 }
 

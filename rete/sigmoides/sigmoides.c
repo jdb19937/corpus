@@ -362,17 +362,28 @@ sectio_relu(void)
         float a = relu_branchless(X[i]);
         float b = relu_branching(X[i]);
         int equal = (bitti(a) == bitti(b));
+        char bx[16], ba[16], bb[16];
+        const char *sx, *sa, *sb;
+        if (isfinite(X[i])) {
+            snprintf(bx, sizeof bx, "%+7.2f", (double)X[i]);
+            sx = bx;
+        } else {
+            sx = (X[i] > 0) ? "   +INF" : "   -INF";
+        }
+        if (isfinite(a)) {
+            snprintf(ba, sizeof ba, "%+7.2f", (double)a);
+            sa = ba;
+        } else {
+            sa = "   +INF";
+        }
+        if (isfinite(b)) {
+            snprintf(bb, sizeof bb, "%+7.2f", (double)b);
+            sb = bb;
+        } else {
+            sb = "   +INF";
+        }
         DICERE("#   %s    %s    %s       %s\n",
-               isfinite(X[i]) ?
-                 ({ static char buf[16]; snprintf(buf, sizeof buf, "%+7.2f", (double)X[i]); buf; }) :
-                 (X[i] > 0 ? "   +INF" : "   -INF"),
-               isfinite(a) ?
-                 ({ static char buf[16]; snprintf(buf, sizeof buf, "%+7.2f", (double)a); buf; }) :
-                 "   +INF",
-               isfinite(b) ?
-                 ({ static char buf[16]; snprintf(buf, sizeof buf, "%+7.2f", (double)b); buf; }) :
-                 "   +INF",
-               equal ? "ita"  : "non");
+               sx, sa, sb, equal ? "ita" : "non");
     }
     DICERE("#\n");
     DICERE("# NaN propagatio: fmaxf(NaN, 0) = 0 per [C99 §7.12.12.2]\n");

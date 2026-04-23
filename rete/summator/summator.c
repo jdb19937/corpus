@@ -256,13 +256,15 @@ evalua(const char *nomen, float valor, double veritas, Resultum *r)
 static void
 tabula_resulta(const Resultum *tab, int n, double veritas)
 {
-    DICERE("#  methodus       valor binary32      err_abs       err_rel\n");
+    DICERE("#  methodus       valor binary32\n");
     for (int i = 0; i < n; i++) {
-        DICERE("#  %-13s  %+.6e    %.4e   %.4e\n",
-               tab[i].nomen, (double)tab[i].valor,
-               (double)tab[i].err_abs, (double)tab[i].err_rel);
+        DICERE("#  %-13s  %+.3e\n", tab[i].nomen, (double)tab[i].valor);
+        SUSSURRO("#  %-13s  valor=%+.9e  err_abs=%.6e  err_rel=%.6e\n",
+                 tab[i].nomen, (double)tab[i].valor,
+                 (double)tab[i].err_abs, (double)tab[i].err_rel);
     }
-    DICERE("#  REFERENCE      %+.6e    (veritas duplex)\n", veritas);
+    DICERE("#  REFERENCE      %+.3e    (veritas duplex)\n", veritas);
+    SUSSURRO("#  REFERENCE     veritas=%+.15e\n", veritas);
 }
 
 /* ========================================================================
